@@ -1,0 +1,8 @@
+= 유저
+== 유저 가입
+include::{snippets}/user-controller-test/join/curl-request.adoc[]
+include::{snippets}/user-controller-test/join/http-request.adoc[]
+include::{snippets}/user-controller-test/join/http-response.adoc[]
+include::{snippets}/user-controller-test/join/httpie-request.adoc[]
+include::{snippets}/user-controller-test/join/request-body.adoc[]
+include::{snippets}/user-controller-test/join/response-body.adoc[]
