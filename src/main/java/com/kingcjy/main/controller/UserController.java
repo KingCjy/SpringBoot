@@ -1,5 +1,6 @@
 package com.kingcjy.main.controller;
 
+import com.kingcjy.main.dto.TestDTO;
 import com.kingcjy.main.dto.UserDto;
 import com.kingcjy.main.entity.UserEntity;
 import com.kingcjy.main.service.UserService;
@@ -34,6 +35,13 @@ public class UserController {
         userService.join(userDto);
 
         return ApiResult.getResponse(HttpStatus.OK, "success");
+    }
+
+    @ResponseBody
+    @PostMapping("/test")
+    public ResponseEntity<Void> test(@RequestBody @Valid TestDTO testDTO) {
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }
