@@ -7,6 +7,9 @@ import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ApiResult<T> {
@@ -17,12 +20,14 @@ public class ApiResult<T> {
     private class Meta {
         private Integer status;
         private String message;
+        private String timestamp;
     }
     @JsonIgnore
     public ApiResult(HttpStatus httpStatus, String message, T body) {
         this.meta = new Meta();
         this.meta.setStatus(httpStatus.value());
         this.meta.setMessage(message);
+        this.meta.setTimestamp(new Timestamp(new Date().getTime()).toString());
 
         this.body = body;
     }
@@ -43,5 +48,4 @@ public class ApiResult<T> {
     public static <T> ResponseEntity<ApiResult<T>> getResponse(HttpStatus httpStatus, String message, T body) {
         return new ResponseEntity<>(new ApiResult<>(httpStatus, message, body), httpStatus);
     }
-
 }

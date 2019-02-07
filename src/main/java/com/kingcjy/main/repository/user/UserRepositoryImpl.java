@@ -4,6 +4,7 @@ import com.kingcjy.main.entity.QUserEntity;
 import com.kingcjy.main.entity.UserEntity;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
+
 public class UserRepositoryImpl extends QuerydslRepositorySupport implements UserRepositoryQueryDsl {
     public UserRepositoryImpl() {
         super(UserEntity.class);

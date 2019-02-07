@@ -53,4 +53,3 @@ public class QUserEntity extends EntityPathBase<UserEntity> {
     }
 
 }
-
