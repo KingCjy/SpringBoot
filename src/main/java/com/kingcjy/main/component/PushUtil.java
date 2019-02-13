@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.io.InputStream;
 
-@Component
+//@Component
 public class PushUtil {
 
     @Value("firebaseKey")

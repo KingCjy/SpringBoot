@@ -1,10 +1,10 @@
 package com.kingcjy.main.controller;
 
 import com.kingcjy.main.dto.TestDTO;
-import com.kingcjy.main.dto.UserDto;
+import com.kingcjy.main.dto.UserDTO;
 import com.kingcjy.main.entity.UserEntity;
 import com.kingcjy.main.service.UserService;
-import com.kingcjy.main.util.ApiResult;
+import com.kingcjy.main.domain.ApiResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,16 +21,16 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/ping")
-    public ResponseEntity<String> ping() {
+    public ResponseEntity<ApiResult<String>> ping() {
 
         UserEntity userEntity = userService.getUserByPhone("01053347385");
 
-        return new ResponseEntity<>("pong", HttpStatus.OK);
+        return ApiResult.getResponse(HttpStatus.OK, "success", "pong");
     }
 
     @ResponseBody
     @PostMapping("/join")
-    public ResponseEntity<ApiResult<Void>> join(@RequestBody @Valid UserDto userDto) {
+    public ResponseEntity<ApiResult<Void>> join(@RequestBody @Valid UserDTO userDto) {
 
         userService.join(userDto);
 

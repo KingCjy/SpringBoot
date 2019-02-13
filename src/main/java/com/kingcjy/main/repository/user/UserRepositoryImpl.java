@@ -9,7 +9,6 @@ public class UserRepositoryImpl extends QuerydslRepositorySupport implements Use
     public UserRepositoryImpl() {
         super(UserEntity.class);
     }
-
     @Override
     public UserEntity selectOneByPhoneNumber(String phoneNumber) {
         UserEntity userEntity = from(QUserEntity.userEntity)

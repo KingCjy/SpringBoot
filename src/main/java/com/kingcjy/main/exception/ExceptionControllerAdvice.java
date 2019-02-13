@@ -1,6 +1,6 @@
 package com.kingcjy.main.exception;
 
-import com.kingcjy.main.util.ApiResult;
+import com.kingcjy.main.domain.ApiResult;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;

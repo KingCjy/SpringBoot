@@ -1,4 +1,4 @@
-package com.kingcjy.main.util;
+package com.kingcjy.main.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -6,6 +6,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.sql.Timestamp;
 import java.util.Date;
@@ -18,6 +20,7 @@ public class ApiResult<T> {
 
     @Data
     private class Meta {
+        private String path;
         private Integer status;
         private String message;
         private String timestamp;
@@ -28,6 +31,7 @@ public class ApiResult<T> {
         this.meta.setStatus(httpStatus.value());
         this.meta.setMessage(message);
         this.meta.setTimestamp(new Timestamp(new Date().getTime()).toString());
+        this.meta.setPath(((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest().getServletPath());
 
         this.body = body;
     }

@@ -1,7 +1,7 @@
 package com.kingcjy.main.controller;
 
 import com.kingcjy.main.TestConfig;
-import com.kingcjy.main.dto.UserDto;
+import com.kingcjy.main.dto.UserDTO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Rule;
@@ -34,7 +34,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class UserControllerTest {
 
     @Rule
-    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation();
+    public JUnitRestDocumentation restDocumentation = new JUnitRestDocumentation("!@");
 
     @Autowired
     private WebApplicationContext context;
@@ -59,7 +59,7 @@ public class UserControllerTest {
     @Test
     public void join() throws Exception {
 
-        UserDto userDto = new UserDto();
+        UserDTO userDto = new UserDTO();
 
         userDto.setName("");
         userDto.setNickname("");

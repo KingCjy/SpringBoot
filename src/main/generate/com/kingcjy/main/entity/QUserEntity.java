@@ -2,7 +2,7 @@ package com.kingcjy.main.entity;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
-import com.kingcjy.main.util.Gender;
+import com.kingcjy.main.domain.enums.Gender;
 import com.querydsl.core.types.dsl.*;
 
 import com.querydsl.core.types.PathMetadata;

@@ -1,4 +1,4 @@
-package com.kingcjy.main.util;
+package com.kingcjy.main.domain.enums;
 
 public enum Gender {
     MALE("남자"), FEMALE("여자"), NONE("입력안함");

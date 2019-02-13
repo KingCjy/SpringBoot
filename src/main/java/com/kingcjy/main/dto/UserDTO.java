@@ -5,7 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.*;
 
 @Data
-public class UserDto {
+public class UserDTO {
 
     @NotNull
     @Size(min=3, max=20)
