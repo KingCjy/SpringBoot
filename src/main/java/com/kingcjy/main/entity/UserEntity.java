@@ -1,7 +1,6 @@
 package com.kingcjy.main.entity;
 
 import com.kingcjy.main.domain.enums.Gender;
-import com.kingcjy.main.domain.enums.SocialType;
 import lombok.Builder;
 import lombok.Data;
 
@@ -22,7 +21,6 @@ public class UserEntity {
     private String nickname;
     private String password;
 
-    private SocialType socialType;
 
     private String email;
 
