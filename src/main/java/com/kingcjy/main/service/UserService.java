@@ -17,11 +17,6 @@ public class UserService {
     }
 
     public void join(UserDTO userDto) {
-//        UserEntity user = new UserEntity();
-//        user.setEmail(userDto.getEmail());
-//        user.setName(userDto.getName());
-//        user.setNickname(userDto.getNickname());
-//        user.setPassword(userDto.getPassword());
 
     }
 }
