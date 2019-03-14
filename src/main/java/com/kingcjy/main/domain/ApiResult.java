@@ -31,7 +31,7 @@ public class ApiResult<T> {
         this.meta.setStatus(httpStatus.value());
         this.meta.setMessage(message);
         this.meta.setTimestamp(new Timestamp(new Date().getTime()).toString());
-        this.meta.setPath(((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest().getServletPath());
+        this.meta.setPath(((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest().getRequestURI());
 
         this.body = body;
     }

@@ -18,11 +18,3 @@ spring:
     open-in-view: false
   main:
     allow-bean-definition-overriding: true
-
-kakao:
-  client:
-    clientId:
-    accessTokenUri: https://kauth.kakao.com/oauth/token
-    userAuthorizationUri: https://kauth.kakao.com/oauth/authorize
-  resource:
-    userInfoUri: https://kauth.kakao.com/v2/user/me
