@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 @Controller
@@ -21,17 +22,14 @@ public class UserController {
     UserService userService;
 
     @GetMapping("/ping")
-    public ResponseEntity<ApiResult<String>> ping() {
-
+    public ResponseEntity<ApiResult<String>> ping(HttpServletRequest request) {
         UserEntity userEntity = userService.getUserByPhone("01053347385");
-
         return ApiResult.getResponse(HttpStatus.OK, "success", "pong");
     }
 
     @ResponseBody
     @PostMapping("/join")
     public ResponseEntity<ApiResult<Void>> join(@RequestBody @Valid UserDTO userDto) {
-
         userService.join(userDto);
 
         return ApiResult.getResponse(HttpStatus.OK, "success");

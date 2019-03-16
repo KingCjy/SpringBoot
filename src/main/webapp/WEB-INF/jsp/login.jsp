@@ -5,9 +5,8 @@
     <title>login</title>
 </head>
 <body>
-
 <script>
-    // location.href = "login/kakao";
+
 </script>
 </body>
 </html>
