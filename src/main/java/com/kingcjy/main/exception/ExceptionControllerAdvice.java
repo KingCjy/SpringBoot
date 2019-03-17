@@ -39,4 +39,9 @@ public class ExceptionControllerAdvice {
     public ResponseEntity<ApiResult<Void>> handleHpptMessageNotReadableException(HttpMessageNotReadableException e) {
         return ApiResult.getResponse(HttpStatus.BAD_REQUEST, e.getMessage());
     }
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    public ResponseEntity<ApiResult<Void>> handleException(Exception e) {
+        return ApiResult.getResponse(HttpStatus.INTERNAL_SERVER_ERROR, e.getMessage());
+    }
 }
